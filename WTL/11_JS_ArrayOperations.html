@@ -1,0 +1,43 @@
+<!-- 11.Write a Java Script to Display Entered Array on Browsers Screen. perform Following operation and show updated content 
+1. Display Entered Array 
+2. Display Entered array in Ascending order 
+3. Push element 25
+4. Display Updated Array 
+5. Print Length of Array 
+6. Show Element at Position No 3 -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Array Operations</title>
+</head>
+<body>
+
+<script>
+    // Accept an array from the user (comma-separated)
+    var input = prompt("Enter an array of numbers (comma-separated):");
+    var enteredArray = input.split(',').map(Number);
+
+    // Display Entered Array
+    document.write("<h2>Array Operations</h2>");
+    document.write("1. Entered Array: " + enteredArray + "<br>");
+
+    // Display Entered array in Ascending order
+    var ascendingArray = enteredArray.slice().sort(function(a, b) { return a - b; });
+    document.write("2. Entered Array in Ascending Order: " + ascendingArray + "<br>");
+
+    // Push element 25
+    enteredArray.push(25);
+
+    // Display Updated Array
+    document.write("3. Updated Array after Pushing 25: " + enteredArray + "<br>");
+
+    // Print Length of Array
+    document.write("4. Length of Updated Array: " + enteredArray.length + "<br>");
+
+    // Show Element at Position No 3
+    var elementAtPosition3 = enteredArray[2]; // Arrays are 0-based indexed
+    document.write("5. Element at Position No 3: " + elementAtPosition3 + "<br>");
+</script>
+</body>
+</html>

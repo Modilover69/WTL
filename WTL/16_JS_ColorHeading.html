@@ -1,0 +1,48 @@
+<!-- 16. Write a JavaScript code to apply font color and background color to Heading from dropdown, if font color and background color is same no changes should be reflected. -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Color Styling</title>
+</head>
+<body>
+
+<h1 id="heading">Sample Heading</h1>
+
+<label for="fontColor">Font Color:</label>
+<select id="fontColor">
+    <option value="black">Black</option>
+    <option value="red">Red</option>
+    <option value="green">Green</option>
+    <option value="blue">Blue</option>
+</select>
+
+<label for="bgColor">Background Color:</label>
+<select id="bgColor">
+    <option value="white">White</option>
+    <option value="yellow">Yellow</option>
+    <option value="pink">Pink</option>
+    <option value="purple">Purple</option>
+</select>
+
+<script>
+    var heading = document.getElementById("heading");
+    var fontColorSelect = document.getElementById("fontColor");
+    var bgColorSelect = document.getElementById("bgColor");
+
+    function applyColors() {
+        var selectedFontColor = fontColorSelect.value;
+        var selectedBgColor = bgColorSelect.value;
+
+        if (selectedFontColor !== selectedBgColor) {
+            heading.style.color = selectedFontColor;
+            heading.style.backgroundColor = selectedBgColor;
+        }
+    }
+
+    fontColorSelect.addEventListener("change", applyColors);
+    bgColorSelect.addEventListener("change", applyColors);
+</script>
+
+</body>
+</html>

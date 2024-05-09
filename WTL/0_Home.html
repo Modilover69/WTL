@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Homepage</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f2f2f2;
+    }
+
+    .container {
+      text-align: center;
+      margin: 50px auto;
+    }
+
+    .button-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    .button-box {
+      padding: 20px;
+      background-color: #3498db;
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .button-box:hover {
+      transform: scale(1.1);
+    }
+
+    @media screen and (max-width: 600px) {
+      .button-container {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Welcome to the Homepage!</h1>
+    <div id="button-container" class="button-container"></div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const buttonContainer = document.getElementById("button-container");
+
+      // Array of button descriptions and their respective URLs
+      const buttons = [
+        { description: "1. Company Registration", url: "1_CompanyRegistration.html" },
+        { description: "2. Student Registration", url: "2_StudentRegistration.html" },
+        { description: "3. (Coming Soon)", url: "0_Home.html" },
+        { description: "4. Car Service Centre", url: "4_CarServiceCentre.html" },
+        { description: "5. Flower Shop", url: "5_FlowerShop.html" },
+        { description: "6. 2 Nos Add Sub Mul Div", url: "6_JS_2NoAddSubMulDiv.html" },
+        { description: "7. Largest of 3 Nos", url: "7_JS_3NoLargest.html" },
+        { description: "8. Temperature F to C", url: "8_JS_Temperature.html" },
+        { description: "9. Sum of Integers", url: "9_JS_SumofIntegers.html" },
+        { description: "10. Average of Integers", url: "10_JS_AvgofIntegers.html" },
+        { description: "11. Array Operations", url: "11_JS_ArrayOperations.html" },
+        { description: "12. Pattern Display", url: "12_JS_PatternDisplay.html" },
+        { description: "13. Color Button", url: "13_JS_ButtonColor.html" },
+        { description: "14. Image Button", url: "14_JS_ButtonImage.html" },
+        { description: "15. RGB String Array", url: "15_JS_StringRGBArray.html" },
+        { description: "16. Colorful Heading", url: "16_JS_ColorHeading.html" },
+        { description: "17", url: ".html" },
+        { description: "18", url: ".html" },
+        { description: "19", url: ".html" },
+        { description: "20", url: ".html" },
+        { description: "21", url: ".html" },
+        { description: "22", url: ".html" },
+        { description: "23", url: ".html" },
+        { description: "24", url: ".html" },
+        { description: "25", url: ".html" },
+        { description: "26", url: ".html" },
+        { description: "27", url: ".html" },
+        // Add more descriptions and URLs as needed...
+      ];
+
+      // Loop through the buttons array and create button boxes
+      buttons.forEach(button => {
+        const buttonBox = document.createElement("button");
+        buttonBox.classList.add("button-box");
+        buttonBox.textContent = button.description;
+        buttonBox.addEventListener("click", function() {
+          window.location.href = button.url;
+        });
+        buttonContainer.appendChild(buttonBox);
+      });
+    });
+  </script>
+</body>
+</html>

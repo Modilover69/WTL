@@ -1,0 +1,87 @@
+<!-- 4.Write a HTML Script using HTML tags and CSS features for Car Service Centre: Beautify Content using Different Car workshop images and Car accessories and show details of various options for Car Servicing Packages -->
+
+<html>
+<head>
+ <title>Car Service Center</title>
+ <style>
+ body {
+ font-family: Arial, sans-serif;
+ background-color:black;
+ color:yellow;
+}
+ header {
+ color:red;
+ text-align: center;
+ padding: 10px;
+ }
+ 
+ .container {
+ max-width: 1200px;
+ margin: 0 auto;
+ padding: 20px;
+ }
+ .package {
+ border: 1px solid ;
+ padding: 10px;
+ margin-bottom: 20px;
+ border-radius: 5px;
+ }
+ .package h3 {
+ margin: 0;
+ }
+ .package p {
+ margin: 5px 0;
+ }
+ .gallery {
+ display: grid;
+ grid-template-columns: repeat(3, 1fr);
+ grid-gap: 10px;
+ }
+ .gallery img {
+ width: 100%;
+ border-radius: 5px;
+ }
+ </style>
+</head>
+<body>
+ <header> 
+ <h1>Car Service Center</h1>
+ </header>
+ 
+ <div class="container">
+ <h2>Our Car Servicing Packages</h2>
+ <div class="package">
+ <h3>Basic Service Package</h3>
+ <p>Includes oil change, tire rotation, and fluid top-ups.</p>
+ <p>Price: 99</p>
+ </div>
+ <div class="package">
+ <h3>Advanced Service Package</h3>
+ <p>Includes basic package services, plus filter replacements.</p>
+ <p>Price: 149</p>
+ </div>
+ <div class="package">
+ <h3>Premium Service Package</h3>
+ <p>Includes advanced package services, plus comprehensive inspection.</p>
+ <p>Price: 249</p>
+ </div>
+ <h2>Car Workshop Photographs</h2>
+ <div class="gallery">
+ <img src="C:\Users\Vedant\Desktop\CARS\car1.jpg">
+ 
+ <div>
+ <img src="C:\Users\Vedant\Desktop\CARS\car2.jpg">
+ </div>
+ <img src="C:\Users\Vedant\Desktop\CARS\car3.jpg">
+ </div>
+ </div>
+ <h2>Car Accessories</h2>
+ <div class="gallery">
+ <img src="C:\Users\Vedant\Desktop\CARS\accessories.jpg" >
+ <img src="C:\Users\Vedant\Desktop\CARS\accessories2.jpg">
+ <img src="C:\Users\Vedant\Desktop\CARS\accessories3.jpg">
+ 
+ </div>
+ </div>
+</body>
+</html>

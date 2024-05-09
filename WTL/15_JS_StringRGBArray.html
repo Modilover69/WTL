@@ -1,0 +1,31 @@
+<!-- 15. Declare a Javascript String array of colors say colors = [“Red”, “Green”, “Blue”]. Accept a value from the user and add it to the array if the value is not present in the array -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Color Array</title>
+</head>
+<body>
+
+<script>
+    // Declare the initial array of colors
+    var colors = ["Red", "Green", "Blue"];
+
+    // Accept a value from the user
+    var userInput = prompt("Enter a color:");
+
+    // Convert user input to title case (e.g., "red" becomes "Red")
+    var formattedInput = userInput.charAt(0).toUpperCase() + userInput.slice(1).toLowerCase();
+
+    // Check if the color is already in the array
+    if (!colors.includes(formattedInput)) {
+        colors.push(formattedInput);
+        document.write("<h2>Updated Color Array</h2>");
+        document.write("Colors: " + colors.join(", "));
+    } else {
+        document.write("<h2>Color Already Exists</h2>");
+        document.write("The color '" + formattedInput + "' already exists in the array.");
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!-- 2. Design a Form For Student Registration Form which will include all elements of form tag. Show appropriate Form output in compatible browser and show when user clicks on submit button, it will display: “Form submitted successfully” -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Registration Form</title>
+</head>
+<body>
+
+<h1>Student Registration Form</h1>
+
+<form id="studentRegistrationForm" action="#" method="post">
+    <label for="firstName">First Name:</label>
+    <input type="text" id="firstName" name="firstName" required><br><br>
+    
+    <label for="lastName">Last Name:</label>
+    <input type="text" id="lastName" name="lastName" required><br><br>
+    
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required><br><br>
+    
+    <label for="dateOfBirth">Date of Birth:</label>
+    <input type="date" id="dateOfBirth" name="dateOfBirth" required><br><br>
+    
+    <label for="gender">Gender:</label>
+    <input type="radio" id="male" name="gender" value="male" required>
+    <label for="male">Male</label>
+    <input type="radio" id="female" name="gender" value="female" required>
+    <label for="female">Female</label><br><br>
+    
+    <label for="course">Course:</label>
+    <select id="course" name="course" required>
+        <option value="engineering">Engineering</option>
+        <option value="medicine">Medicine</option>
+        <option value="business">Business</option>
+        <option value="arts">Arts</option>
+    </select><br><br>
+    
+    <label for="terms">Agree to Terms:</label>
+    <input type="checkbox" id="terms" name="terms" required><br><br>
+    
+    <input type="submit" value="Submit">
+</form>
+<script>
+    document.getElementById("studentRegistrationForm").addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent the default form submission behavior
+        
+        // Display the success message
+        alert("Form submitted successfully");
+    });
+</script>
+</body>
+</html>

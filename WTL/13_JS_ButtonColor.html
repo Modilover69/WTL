@@ -1,0 +1,28 @@
+<!-- 13. Create one button on every click of button different colors should be applied to background. Use of Array is mandatory -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Background Color Changer</title>
+</head>
+<body>
+
+<button id="colorButton">Change Background Color</button>
+
+<script>
+    // Array of colors
+    var colors = ["red", "blue", "green", "yellow", "purple", "orange", "pink", "cyan"];
+
+    // Get the button element
+    var colorButton = document.getElementById("colorButton");
+
+    // Function to change the background color
+    function changeBackgroundColor() {
+        var randomIndex = Math.floor(Math.random() * colors.length);
+        document.body.style.backgroundColor = colors[randomIndex];
+    }
+
+    // Attach click event to the button
+    colorButton.addEventListener("click", changeBackgroundColor);
+</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!-- 17. Create an array using JavaScript and display the occurrences of a specific character [For example; A= [‘a, ‘b’, ‘a’, ‘c’, ‘z’] Output should be occurrences of a is 2]. -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Character Occurrences</title>
+</head>
+<body>
+
+<script>
+    // Create an array
+    var array = ['a', 'b', 'a', 'c', 'z'];
+
+    // Specify the character to count
+    var charToCount = 'a';
+
+    // Count occurrences of the specified character
+    var occurrences = 0;
+    for (var i = 0; i < array.length; i++) {
+        if (array[i] === charToCount) {
+            occurrences++;
+        }
+    }
+
+    // Display the occurrences of the specified character
+    document.write("<h2>Character Occurrences</h2>");
+    document.write("Array: " + array.join(", ") + "<br>");
+    document.write("Occurrences of '" + charToCount + "': " + occurrences);
+</script>
+
+</body>
+</html>

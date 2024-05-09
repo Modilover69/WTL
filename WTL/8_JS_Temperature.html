@@ -1,0 +1,24 @@
+<!-- 8. Write a Java script to accept the temperature in Fahrenheit and display result in degree Celsius on browsers screen -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fahrenheit to Celsius</title>
+</head>
+<body>
+
+<script>
+    // Accept the temperature in Fahrenheit from the user
+    var fahrenheit = parseFloat(prompt("Enter the temperature in Fahrenheit:"));
+
+    // Convert Fahrenheit to Celsius
+    var celsius = (fahrenheit - 32) * (5 / 9);
+
+    // Display the temperature in Celsius on the screen
+    document.write("<h2>Temperature Conversion</h2>");
+    document.write("Temperature in Fahrenheit: " + fahrenheit + " °F<br>");
+    document.write("Temperature in Celsius: " + celsius.toFixed(2) + " °C<br>");
+</script>
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!-- 18. Write a Javascript code to append static row to the table on click of button. -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Table Row Appender</title>
+</head>
+<body>
+
+<table id="myTable" border="1">
+    <tr>
+        <th>Name</th>
+        <th>Age</th>
+    </tr>
+    <tr>
+        <td>John</td>
+        <td>25</td>
+    </tr>
+    <tr>
+        <td>Jane</td>
+        <td>30</td>
+    </tr>
+</table>
+
+<button id="addRowButton">Add Row</button>
+
+<script>
+    var addRowButton = document.getElementById("addRowButton");
+    var table = document.getElementById("myTable");
+
+    addRowButton.addEventListener("click", function() {
+        var newRow = document.createElement("tr");
+        var nameCell = document.createElement("td");
+        var ageCell = document.createElement("td");
+
+        nameCell.textContent = "New Name";
+        ageCell.textContent = "New Age";
+
+        newRow.appendChild(nameCell);
+        newRow.appendChild(ageCell);
+
+        table.appendChild(newRow);
+    });
+</script>
+
+</body>
+</html>

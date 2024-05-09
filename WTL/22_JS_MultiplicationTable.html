@@ -1,0 +1,41 @@
+<!-- 22.Write a Java Script to display Multiplication table of entered values of rows and columns as follows 1 2 3 4 5 2 4 6 8 10 3 6 9 12 15 4 8 12 16 20 5 10 15 20 25 -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Multiplication Table</title>
+</head>
+<body>
+
+<label for="rows">Enter number of rows:</label>
+<input type="number" id="rows" min="1">
+
+<label for="columns">Enter number of columns:</label>
+<input type="number" id="columns" min="1">
+
+<button id="generateButton">Generate Table</button>
+
+<div id="tableContainer"></div>
+
+<script>
+    var generateButton = document.getElementById("generateButton");
+    var tableContainer = document.getElementById("tableContainer");
+
+    generateButton.addEventListener("click", function() {
+        var rows = parseInt(document.getElementById("rows").value);
+        var columns = parseInt(document.getElementById("columns").value);
+
+        var tableHTML = "<table border='1'>";
+        for (var i = 1; i <= rows; i++) {
+            tableHTML += "<tr>";
+            for (var j = 1; j <= columns; j++) {
+                tableHTML += "<td>" + (i * j) + "</td>";
+            }
+            tableHTML += "</tr>";
+        }
+        tableHTML += "</table>";
+
+        tableContainer.innerHTML = tableHTML;
+    });
+</script>
+</body>
+</html>

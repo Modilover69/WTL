@@ -1,0 +1,30 @@
+<!-- 23.Write a JavaScript function that checks whether a Entered string is palindrome or not? (Make use of Prompt function to take input) -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Palindrome Checker</title>
+</head>
+<body>
+
+<script>
+    // Function to check if a string is a palindrome
+    function isPalindrome(str) {
+        // Remove non-alphanumeric characters and convert to lowercase
+        var cleanStr = str.replace(/[^a-zA-Z0-9]/g, '').toLowerCase();
+        
+        // Compare the cleaned string with its reverse
+        var reversedStr = cleanStr.split('').reverse().join('');
+        return cleanStr === reversedStr;
+    }
+
+    // Get user input using prompt
+    var userInput = prompt("Enter a string:");
+    
+    // Check if the entered string is a palindrome
+    var result = isPalindrome(userInput) ? "Palindrome" : "Not Palindrome";
+    
+    // Display the result
+    alert("The entered string is " + result);
+</script>
+</body>
+</html>

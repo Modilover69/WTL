@@ -1,0 +1,30 @@
+<!-- 6. Write a Java Script to accept Two Numbers from User and Print their Addition, Subtraction, Multiplication and Division. Make Use of Prompt function and display result on Browser’s Screen. -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculator</title>
+</head>
+<body>
+
+<script>
+    // Accept two numbers from the user
+    var num1 = parseFloat(prompt("Enter the first number:"));
+    var num2 = parseFloat(prompt("Enter the second number:"));
+
+    // Perform calculations
+    var addition = num1 + num2;
+    var subtraction = num1 - num2;
+    var multiplication = num1 * num2;
+    var division = num1 / num2;
+
+    // Display results on the screen
+    document.write("<h2>Calculator Results</h2>");
+    document.write("First Number: " + num1 + "<br>");
+    document.write("Second Number: " + num2 + "<br>");
+    document.write("Addition: " + addition + "<br>");
+    document.write("Subtraction: " + subtraction + "<br>");
+    document.write("Multiplication: " + multiplication + "<br>");
+    document.write("Division: " + division.toFixed(2) + "<br>");
+</script>
+</body>
+</html>

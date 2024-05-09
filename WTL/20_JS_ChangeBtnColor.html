@@ -1,0 +1,27 @@
+20. Write a Javascript code to change the color of button with following events: 1.Onmouseover 2. Onmouseout 3. Onclick
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Button Color Changer</title>
+</head>
+<body>
+
+<button id="colorButton">Change Color</button>
+
+<script>
+    var colorButton = document.getElementById("colorButton");
+
+    colorButton.addEventListener("mouseover", function() {
+        colorButton.style.backgroundColor = "blue"; // Change color on mouseover
+    });
+
+    colorButton.addEventListener("mouseout", function() {
+        colorButton.style.backgroundColor = "gray"; // Change color on mouseout
+    });
+
+    colorButton.addEventListener("click", function() {
+        colorButton.style.backgroundColor = "green"; // Change color on click
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!-- 19. Write a Javascript code to append anchor tag that redirects to the new page -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Anchor Tag Appender</title>
+</head>
+<body>
+
+<button id="addAnchorButton">Add Anchor</button>
+
+<script>
+    var addAnchorButton = document.getElementById("addAnchorButton");
+
+    addAnchorButton.addEventListener("click", function() {
+        var anchorTag = document.createElement("a");
+        anchorTag.textContent = "Click me to go to the new page";
+        anchorTag.href = "https://www.example.com"; // Replace with the URL of the new page
+        anchorTag.target = "_blank"; // Open link in a new tab
+
+        document.body.appendChild(anchorTag);
+    });
+</script>
+</body>
+</html>

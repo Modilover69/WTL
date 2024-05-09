@@ -1,0 +1,38 @@
+<!-- 14. Create one button on every click of button different images should be applied. Use of Array is mandatory -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Changer</title>
+</head>
+<body>
+
+<button id="imageButton">Change Image</button>
+<img id="displayedImage" src="default-image.jpg" alt="Displayed Image" width="300">
+
+<script>
+    // Array of image URLs
+    var images = [
+        "image1.jpg",
+        "image2.jpg",
+        "image3.jpg",
+        "image4.jpg",
+        "image5.jpg"
+    ];
+
+    // Get the button and image elements
+    var imageButton = document.getElementById("imageButton");
+    var displayedImage = document.getElementById("displayedImage");
+
+    // Function to change the displayed image
+    function changeImage() {
+        var randomIndex = Math.floor(Math.random() * images.length);
+        displayedImage.src = images[randomIndex];
+    }
+
+    // Attach click event to the button
+    imageButton.addEventListener("click", changeImage);
+</script>
+
+</body>
+</html>

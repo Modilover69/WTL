@@ -1,0 +1,33 @@
+<!-- 24.Write a JavaScript program to find the area of a triangle where lengths of the three of its sides are 5, 6, 7 -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Triangle Area Calculator</title>
+</head>
+<body>
+
+<h2>Triangle Area Calculator</h2>
+
+<script>
+    // Given side lengths
+    var side1 = 5;
+    var side2 = 6;
+    var side3 = 7;
+
+    // Calculate the semi-perimeter
+    var semiPerimeter = (side1 + side2 + side3) / 2;
+
+    // Calculate the area using Heron's formula
+    var area = Math.sqrt(
+        semiPerimeter *
+        (semiPerimeter - side1) *
+        (semiPerimeter - side2) *
+        (semiPerimeter - side3)
+    );
+
+    // Display the result on the webpage
+    document.write("Given side lengths: " + side1 + ", " + side2 + ", " + side3 + "<br>");
+    document.write("The area of the triangle is: " + area.toFixed(2));
+</script>
+</body>
+</html>

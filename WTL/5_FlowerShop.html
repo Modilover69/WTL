@@ -1,0 +1,63 @@
+<!-- 5.Write a HTML Script using HTML tags and CSS features for Flower Shop: Using CSS Selectors and Beautification Options show Output with various types of flower images and available stock of flowers in floweriest shop. -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flower Shop</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .flower {
+            display: inline-block;
+            margin: 10px;
+            text-align: center;
+        }
+        .flower img {
+            max-width: 100%;
+            height: auto;
+        }
+        .stock {
+            font-size: 16px;
+            color: #666;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Flower Shop</h1>
+    </header>
+    <div class="container">
+        <div class="flower">
+            <img src="rose.jpg" alt="Rose">
+            <p class="stock">Stock: 50</p>
+        </div>
+        <div class="flower">
+            <img src="tulip.jpg" alt="Tulip">
+            <p class="stock">Stock: 30</p>
+        </div>
+        <div class="flower">
+            <img src="daisy.jpg" alt="Daisy">
+            <p class="stock">Stock: 20</p>
+        </div>
+        <div class="flower">
+            <img src="lily.jpg" alt="Lily">
+            <p class="stock">Stock: 40</p>
+        </div>
+    </div>
+</body>
+</html>
