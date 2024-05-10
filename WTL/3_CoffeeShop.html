@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Shop</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #3d3d3d;
+            color: white;
+        }
+
+        section {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            padding: 20px;
+        }
+
+        .coffee-type {
+            width: 200px;
+            text-align: center;
+            margin: 20px;
+            padding: 10px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        select,
+        button {
+            margin-top: 10px;
+            padding: 8px;
+            font-size: 16px;
+        }
+
+        img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        p {
+            text-align: center;
+            font-size: 20px;
+        }
+
+        p #abc {
+            padding-top: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Yewale Amrutulya Coffee</h1>
+    </header>
+
+    <p id="abc">Welcome to Yewale Amrutulya Coffee</p>
+    <p>Pay as much you can for the best taste and I hope this coffee will blow your mind and you will be ready to
+        perform 9/11</p>
+
+    <section>
+        <div class="coffee-type">
+            <img src="coffee1.jpeg.jpg" alt="Coffee Type 1">
+            <h2>Espresso</h2>
+            <select id="coffeeType1">
+                <option value="small">Small</option>
+                <option value="medium">Medium</option>
+                <option value="large">Large</option>
+            </select>
+            <button onclick="calculateRate('coffeeType1')">Order Now</button>
+            <p id="rateCoffeeType1"></p>
+        </div>
+
+        <div class="coffee-type">
+            <img src="coffee2.jpeg.jpg" alt="Coffee Type 2">
+            <h2>Latte</h2>
+            <select id="coffeeType2">
+                <option value="small">Small</option>
+                <option value="medium">Medium</option>
+                <option value="large">Large</option>
+            </select>
+            <button onclick="calculateRate('coffeeType2')">Order Now</button>
+            <p id="rateCoffeeType2"></p>
+        </div>
+
+        <div class="coffee-type">
+            <img src="coffee3.jpeg.jpg" alt="Coffee Type 3">
+            <h2>Mocha</h2>
+            <select id="coffeeType3">
+                <option value="small">Small</option>
+                <option value="medium">Medium</option>
+                <option value="large">Large</option>
+            </select>
+            <button onclick="calculateRate('coffeeType3')">Order Now</button>
+            <p id="rateCoffeeType3"></p>
+        </div>
+
+        <div class="coffee-type">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZ1J0AAHfwKd3iGfx43_G1bJvYolRst25LoQ&s"
+                alt="Coffee Type 4">
+            <h2>Cappuccino </h2>
+            <select id="coffeeType4">
+                <option value="small">Small</option>
+                <option value="medium">Medium</option>
+                <option value="large">Large</option>
+            </select>
+            <button onclick="calculateRate('coffeeType4')">Order Now</button>
+            <p id="rateCoffeeType4"></p>
+        </div>
+
+        <!-- Add more coffee types as needed -->
+
+    </section>
+
+    <script>
+        function calculateRate(coffeeType) {
+            var selectedSize = document.getElementById(coffeeType).value;
+            var rate;
+
+            switch (coffeeType) {
+                case 'coffeeType1':
+                    switch (selectedSize) {
+                        case 'small':
+                            rate = 2.50;
+                            break;
+                        case 'medium':
+                            rate = 3.50;
+                            break;
+                        case 'large':
+                            rate = 4.50;
+                            break;
+                        default:
+                            rate = 0;
+                    }
+                    document.getElementById('rateCoffeeType1').innerHTML = 'Rate: $' + rate.toFixed(2);
+                    break;
+
+                case 'coffeeType2':
+                    switch (selectedSize) {
+                        case 'small':
+                            rate = 4.50;
+                            break;
+                        case 'medium':
+                            rate = 9.50;
+                            break;
+                        case 'large':
+                            rate = 14.50;
+                            break;
+                        default:
+                            rate = 0;
+                    }
+                    document.getElementById('rateCoffeeType2').innerHTML = 'Rate: $' + rate.toFixed(2);
+                    break;
+
+                case 'coffeeType3':
+                    switch (selectedSize) {
+                        case 'small':
+                            rate = 5.50;
+                            break;
+                        case 'medium':
+                            rate = 9.50;
+                            break;
+                        case 'large':
+                            rate = 13.50;
+                            break;
+                        default:
+                            rate = 0;
+                    }
+                    document.getElementById('rateCoffeeType3').innerHTML = 'Rate: $' + rate.toFixed(2);
+                    break;
+
+                case 'coffeeType4':
+                    switch (selectedSize) {
+                        case 'small':
+                            rate = 15.50;
+                            break;
+                        case 'medium':
+                            rate = 69.50;
+                            break;
+                        case 'large':
+                            rate = 6000.50;
+                            break;
+                        default:
+                            rate = 0;
+                    }
+                    document.getElementById('rateCoffeeType4').innerHTML = 'Rate: $' + rate.toFixed(2);
+                    break;
+
+                default:
+                    rate = 0;
+            }
+        }
+    </script>
+</body>
+
+</html>
