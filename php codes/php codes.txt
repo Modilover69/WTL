@@ -1,0 +1,907 @@
+21.	Write a PHP script to find the factorial of a number using a recursive function. Take input via prompt function and show output on the browser screen:
+html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factorial Calculator</title>
+</head>
+<body>
+    <form method="get" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+        <label for="number">Enter a number:</label>
+        <input type="text" id="number" name="number">
+        <input type="submit" value="Calculate Factorial">
+    </form>
+
+    <?php
+    if ($_SERVER["REQUEST_METHOD"] == "GET") {
+        $number = $_GET["number"];
+
+        function factorial($n) {
+            if ($n === 0 || $n === 1) {
+                return 1;
+            } else {
+                return $n * factorial($n - 1);
+            }
+        }
+
+        $result = factorial($number);
+        echo "<p>Factorial of $number is: $result</p>";
+    }
+    ?>
+</body>
+</html>
+
+30.	Write a PHP script to add the following fields in a student table with database connection:
+•	Roll Number
+•	Name
+•	City
+•	Pin Code
+php
+<?php
+$servername = "localhost";
+$username = "username";
+$password = "password";
+$dbname = "dbname";
+
+$conn = new mysql($servername, $username, $password, $dbname);
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+if ($_SERVER["REQUEST_METHOD"] == "GET") {
+    $rollNo = $_GET["rollNo"];
+    $name = $_GET["name"];
+    $city = $_GET["city"];
+    $pincode = $_GET["pincode"];
+
+    $sql = "INSERT INTO student (rollNo, name, city, pincode) VALUES ('$rollNo', '$name', '$city', '$pincode')";
+
+    if ($conn->query($sql) === TRUE) {
+        echo "New record created successfully";
+    } else {
+        echo "Error: " . $sql . "<br>" . $conn->error;
+    }
+}
+
+$conn->close();
+?>
+This is the form to capture the student details:
+html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Details</title>
+</head>
+<body>
+    <form method="get" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+        <label for="rollNo">Roll Number:</label>
+        <input type="text" id="rollNo" name="rollNo">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name">
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city">
+        <label for="pincode">Pin Code:</label>
+        <input type="text" id="pincode" name="pincode">
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
+Feel free to ask if you have any questions or need further assistance!
+continue
+ChatGPT
+31.	Write a PHP script to add records in the employee table with database connection:
+•	EMP No
+•	Name
+•	Department
+•	Salary
+php
+<?php
+$servername = "localhost";
+$username = "username";
+$password = "password";
+$dbname = "dbname";
+
+$conn = new mysql($servername, $username, $password, $dbname);
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+if ($_SERVER["REQUEST_METHOD"] == "GET") {
+    $empNo = $_GET["empNo"];
+    $name = $_GET["name"];
+    $department = $_GET["department"];
+    $salary = $_GET["salary"];
+
+    $sql = "INSERT INTO employee (empNo, name, department, salary) VALUES ('$empNo', '$name', '$department', '$salary')";
+
+    if ($conn->query($sql) === TRUE) {
+        echo "New record created successfully";
+    } else {
+        echo "Error: " . $sql . "<br>" . $conn->error;
+    }
+}
+
+$conn->close();
+?>
+This is the form to capture the employee details:
+html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Details</title>
+</head>
+<body>
+    <form method="get" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+        <label for="empNo">Employee Number:</label>
+        <input type="text" id="empNo" name="empNo">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name">
+        <label for="department">Department:</label>
+        <input type="text" id="department" name="department">
+        <label for="salary">Salary:</label>
+        <input type="text" id="salary" name="salary">
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
+Feel free to ask if you have any questions or need further assistance!
+continue
+ChatGPT
+32.	Write a PHP script to add records in the users table with database connection:
+•	User id
+•	User Name
+•	Password
+php
+<?php
+$servername = "localhost";
+$username = "username";
+$password = "password";
+$dbname = "dbname";
+
+$conn = new mysql($servername, $username, $password, $dbname);
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+if ($_SERVER["REQUEST_METHOD"] == "GET") {
+    $userId = $_GET["userId"];
+    $userName = $_GET["userName"];
+    $password = $_GET["password"];
+
+    $sql = "INSERT INTO users (userId, userName, password) VALUES ('$userId', '$userName', '$password')";
+
+    if ($conn->query($sql) === TRUE) {
+        echo "New record created successfully";
+    } else {
+        echo "Error: " . $sql . "<br>" . $conn->error;
+    }
+}
+
+$conn->close();
+?>
+This is the form to capture the user details:
+html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration</title>
+</head>
+<body>
+    <form method="get" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+        <label for="userId">User ID:</label>
+        <input type="text" id="userId" name="userId">
+        <label for="userName">User Name:</label>
+        <input type="text" id="userName" name="userName">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password">
+        <input type="submit" value="Register">
+    </form>
+</body>
+</html>
+Feel free to ask if you have any questions or need further assistance!
+continue
+ChatGPT
+33.	Write a PHP script to take a number from the user and print the table of that number:
+php
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplication Table</title>
+</head>
+<body>
+    <form method="get" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+        <label for="number">Enter a number:</label>
+        <input type="text" id="number" name="number">
+        <input type="submit" value="Generate Table">
+    </form>
+
+    <?php
+    if ($_SERVER["REQUEST_METHOD"] == "GET") {
+        $number = $_GET["number"];
+
+        echo "<h2>Multiplication Table of $number</h2>";
+        echo "<table border='1'>";
+        for ($i = 1; $i <= 10; $i++) {
+            echo "<tr><td>$number x $i</td><td>=</td><td>" . ($number * $i) . "</td></tr>";
+        }
+        echo "</table>";
+    }
+    ?>
+</body>
+</html>
+This script takes a number from the user, and upon submission, it generates the multiplication table for that number up to 10.
+Feel free to ask if you have any questions or need further assistance!
+continue 
+ChatGPT
+34.	Write a program to check the student's grade based on the marks using if-else statements:
+php
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Grade Checker</title>
+</head>
+<body>
+    <form method="get" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+        <label for="marks">Enter marks:</label>
+        <input type="text" id="marks" name="marks">
+        <input type="submit" value="Check Grade">
+    </form>
+
+    <?php
+    if ($_SERVER["REQUEST_METHOD"] == "GET") {
+        $marks = $_GET["marks"];
+        $grade = "";
+
+        if ($marks >= 60) {
+            $grade = "First Division";
+        } elseif ($marks >= 45 && $marks <= 59) {
+            $grade = "Second Division";
+        } elseif ($marks >= 33 && $marks <= 44) {
+            $grade = "Third Division";
+        } else {
+            $grade = "Fail";
+        }
+
+        echo "<p>Grade: $grade</p>";
+    }
+    ?>
+</body>
+</html>
+This script takes input marks from the user and displays the corresponding grade based on the defined conditions using if-else statements.
+Feel free to ask if you have any questions or need further assistance!
+continue 
+ChatGPT
+35.	Write a program to show the day of the week (for example: Monday) based on numbers using switch/case statements:
+php
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day of the Week</title>
+</head>
+<body>
+    <form method="et" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+        <label for="dayNumber">Enter day number (1-7):</label>
+        <input type="number" id="dayNumber" name="dayNumber" min="1" max="7">
+        <input type="submit" value="Show Day">
+    </form>
+
+    <?php
+    if ($_SERVER["REQUEST_METHOD"] == "GET") {
+        $dayNumber = $_GET["dayNumber"];
+        $dayName = "";
+
+        switch ($dayNumber) {
+            case 1:
+                $dayName = "Monday";
+                break;
+            case 2:
+                $dayName = "Tuesday";
+                break;
+            case 3:
+                $dayName = "Wednesday";
+                break;
+            case 4:
+                $dayName = "Thursday";
+                break;
+            case 5:
+                $dayName = "Friday";
+                break;
+            case 6:
+                $dayName = "Saturday";
+                break;
+            case 7:
+                $dayName = "Sunday";
+                break;
+            default:
+                $dayName = "Invalid day number";
+                break;
+        }
+
+        echo "<p>Day of the week: $dayName</p>";
+    }
+    ?>
+</body>
+</html>
+This script takes input day number from the user and displays the corresponding day of the week using switch/case statements.
+Feel free to ask if you have any questions or need further assistance!
+continue
+ChatGPT
+36.	Write a PHP program to find the factorial of a number using a recursive function. Take input via the Prompt function and show the output on the browser screen:
+php
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factorial Calculator</title>
+</head>
+<body>
+    <form method="beg" action="<php echo $_SERVER['PHP_SELF']; ?>">
+        <label for="number">Enter a number:</label>
+        <input type="text" id="number" name="number">
+        <input type="submit" value="Calculate Factorial">
+    </form>
+
+    <?php
+    function factorial($n) {
+        if ($n <= 1) {
+            return 1;
+        } else {
+            return $n * factorial($n - 1);
+        }
+    }
+
+    if ($_SERVER["REQUEST_METHOD"] == "GET") {
+        $number = $_GET["number"];
+        $result = factorial($number);
+        echo "<p>Factorial of $number is: $result</p>";
+    }
+    ?>
+</body>
+</html>
+This script takes input number from the user and calculates its factorial using a recursive function, then displays the result on the browser screen.
+Feel free to ask if you have any questions or need further assistance!
+continue
+ChatGPT
+37.	Write a PHP program to calculate electricity bill:
+php
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electricity Bill Calculator</title>
+</head>
+<body>
+    <form method="get" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+        <label for="units">Enter units consumed:</label>
+        <input type="text" id="units" name="units">
+        <input type="submit" value="Calculate Bill">
+    </form>
+
+    <?php
+    if ($_SERVER["REQUEST_METHOD"] == "GET") {
+        $units = $_GET["units"];
+        $totalBill = 0;
+
+        if ($units <= 50) {
+            $totalBill = $units * 3.50;
+        } elseif ($units <= 150) {
+            $totalBill = (50 * 3.50) + (($units - 50) * 4.00);
+        } elseif ($units <= 250) {
+            $totalBill = (50 * 3.50) + (100 * 4.00) + (($units - 150) * 5.20);
+        } else {
+            $totalBill = (50 * 3.50) + (100 * 4.00) + (100 * 5.20) + (($units - 250) * 6.50);
+        }
+
+        echo "<p>Total Electricity Bill: Rs. $totalBill</p>";
+    }
+    ?>
+</body>
+</html>
+This script calculates the electricity bill based on the units consumed using predefined conditions.
+Feel free to ask if you have any questions or need further assistance!
+continue
+ChatGPT
+38.	Write a PHP program to find the square root of a number using a PHP function. Take input via a textbox and show the output on the browser screen:
+php
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Square Root Calculator</title>
+</head>
+<body>
+    <form method="get" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+        <label for="number">Enter a number:</label>
+        <input type="text" id="number" name="number">
+        <input type="submit" value="Calculate Square Root">
+    </form>
+
+    <?php
+    if ($_SERVER["REQUEST_METHOD"] == "GET") {
+        $number = $_GET["number"];
+        $squareRoot = sqrt($number);
+        echo "<p>Square root of $number is: $squareRoot</p>";
+    }
+    ?>
+</body>
+</html>
+This script takes input from a textbox, calculates its square root using the sqrt() function, and displays the result on the browser screen.
+Feel free to ask if you have any questions or need further assistance!
+continue
+ChatGPT
+39.	Write a PHP script with a function to check whether a number is prime or not:
+php
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime Number Checker</title>
+</head>
+<body>
+    <form method="get" action="<?php echo SERVER['PHP_SELF']; ?>">
+        <label for="number">Enter a number:</label>
+        <input type="text" id="number" name="number">
+        <input type="submit" value="Check Prime">
+    </form>
+
+    <?php
+    function isPrime($num) {
+        if ($num <= 1) {
+            return false;
+        }
+        for ($i = 2; $i <= sqrt($num); $i++) {
+            if ($num % $i === 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    if ($_SERVER["REQUEST_METHOD"] == "GET") {
+        $number = GET["number"];
+        if (is_numeric($number) && $number >= 0) {
+            if (isPrime($number)) {
+                echo "<p>$number is a prime number.</p>";
+            } else {
+                echo "<p>$number is not a prime number.</p>";
+            }
+        } else {
+            echo "<p>Please enter a valid positive number.</p>";
+        }
+    }
+    ?>
+</body>
+</html>
+This script checks if the input number is a prime number or not and displays the result on the browser screen.
+Feel free to ask if you have any questions or need further assistance!
+continue
+ChatGPT
+40.	Write a PHP function script that checks whether a passed string is a palindrome or not:
+php
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindrome Checker</title>
+</head>
+<body>
+    <form method="get" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+        <label for="string">Enter a string:</label>
+        <input type="text" id="string" name="string">
+        <input type="submit" value="Check Palindrome">
+    </form>
+
+    <?php
+    function isPalindrome($str) {
+        $str = strtolower(preg_replace("/[^A-Za-z0-9]/", "", $str));
+        return $str === strrev($str);
+    }
+
+    if ($_SERVER["REQUEST_METHOD"] == "GET") {
+        $string = $_GET["string"];
+        if (isPalindrome($string)) {
+            echo "<p>$string is a palindrome.</p>";
+        } else {
+            echo "<p>$string is not a palindrome.</p>";
+        }
+    }
+    ?>
+</body>
+</html>
+This script checks whether the input string is a palindrome or not and displays the result on the browser screen.
+Feel free to ask if you have any questions or need further assistance!
+continue
+ChatGPT
+41.	Write a PHP script to:
+•	Transform a string to all uppercase letters.
+•	Transform a string to all lowercase letters.
+•	Make the first character of a string uppercase.
+•	Make the first character of all the words in a string uppercase.
+php
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Manipulation</title>
+</head>
+<body>
+    <form method="get" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+        <label for="string">Enter a string:</label>
+        <input type="text" id="string" name="string">
+        <input type="submit" value="Transform">
+    </form>
+
+    <?php
+    if SERVER["REQUEST_METHOD"] == "GET") {
+        $string = $_GET["string"];
+
+        echo "<p>Original String: $string</p>";
+        echo "<p>Transformed String:</p>";
+        echo "<ul>";
+        echo "<li>All Uppercase: " . strtoupper($string) . "</li>";
+        echo "<li>All Lowercase: " . strtolower($string) . "</li>";
+        echo "<li>First Character Uppercase: " . ucfirst($string) . "</li>";
+        echo "<li>First Character of Each Word Uppercase: " . ucwords($string) . "</li>";
+        echo "</ul>";
+    }
+    ?>
+</body>
+</html>
+This script allows users to enter a string and performs various transformations on it, displaying the results on the browser screen.
+Feel free to ask if you have any questions or need further assistance!
+continue
+ChatGPT
+42.	Write a PHP program to compute and return the square root of a given number:
+php
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Square Root Calculator</title>
+</head>
+<body>
+    <form method="get" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+        <label for="number">Enter a number:</label>
+        <input type="text" id="number" name="number">
+        <input type="submit" value="Calculate Square Root">
+    </form>
+
+    <?php
+    if ($_SERVER["REQUEST_METHOD"] == "GET") {
+        $number = $_GET["number"];
+        if (is_numeric($number) && $number >= 0) {
+            $squareRoot = sqrt($number);
+            echo "<p>Square root of $number is: $squareRoot</p>";
+        } else {
+            echo "<p>Please enter a valid non-negative number.</p>";
+        }
+    }
+    ?>
+</body>
+</html>
+This script calculates and displays the square root of the given number entered by the user.
+Feel free to ask if you have any questions or need further assistance!
+continue
+ChatGPT
+43.	Write a PHP program to reverse the digits of an integer:
+php
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reverse Integer</title>
+</head>
+<body>
+    <form method="get" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+        <label for="number">Enter an integer:</label>
+        <input type="text" id="number" name="number">
+        <input type="submit" value="Reverse">
+    </form>
+
+    <?php
+    if ($_SERVER["REQUEST_METHOD"] == "GET") {
+        $number = $_GET["number"];
+        if (is_numeric($number)) {
+            $reversedNumber = (int)strrev((string)$number);
+            echo "<p>Reversed integer: $reversedNumber</p>";
+        } else {
+            echo "<p>Please enter a valid integer.</p>";
+        }
+    }
+    ?>
+</body>
+</html>
+This script takes an integer input from the user, reverses its digits, and displays the reversed integer.
+Feel free to ask if you have any questions or need further assistance!
+continue
+ChatGPT
+44.	Write a PHP program to check whether a given positive integer is a power of four:
+php
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Power of Four Checker</title>
+</head>
+<body>
+    <form method="get" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+        <label for="number">Enter a positive integer:</label>
+        <input type="text" id="number" name="number">
+        <input type="submit" value="Check Power of Four">
+    </form>
+
+    <?php
+    if ($_SERVER["REQUEST_METHOD"] == "GET") {
+        $number = GET["number"];
+        if (is_numeric($number) && $number > 0) {
+            if (($number & ($number - 1)) == 0 && ($number & 0xAAAAAAAA) == 0) {
+                echo "<p>$number is a power of four.</p>";
+            } else {
+                echo "<p>$number is not a power of four.</p>";
+            }
+        } else {
+            echo "<p>Please enter a valid positive integer.</p>";
+        }
+    }
+    ?>
+</body>
+</html>
+This script checks if the given positive integer is a power of four and displays the result on the browser screen.
+Feel free to ask if you have any questions or need further assistance!
+continue
+ChatGPT
+Certainly! Let's continue:
+45.	Write a PHP Function script to accept Temperature from the user in Fahrenheit and convert it to degrees Celsius and vice versa. Display both conversions separately on the browser screen.
+php
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Converter</title>
+</head>
+<body>
+    <h2>Temperature Converter</h2>
+    <form method="get" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+        <label for="fahrenheit">Enter temperature in Fahrenheit:</label>
+        <input type="text" id="fahrenheit" name="fahrenheit">
+        <input type="submit" value="Convert">
+    </form>
+
+    <?php
+    function fahreneitToCelsius($fahrenheit) {
+        return ($fahrenheit - 32) * (5/9);
+    }
+
+    function celsiusToFahrenheit($celsius) {
+        return ($celsius * 9/5) + 32;
+    }
+
+    if ($_SERVER["REQUEST_METHOD"] == "GET") {
+        $fahrenheit = GET["fahrenheit"];
+        if (is_numeric($fahrenheit)) {
+            $celsius = fahrenheitToCelsius($fahrenheit);
+            $convertedFahrenheit = celsiusToFahrenheit($celsius);
+            echo "<p>$fahrenheit°F is $celsius°C</p>";
+            echo "<p>$celsius°C is $convertedFahrenheit°F</p>";
+        } else {
+            echo "<p>Please enter a valid temperature.</p>";
+        }
+    }
+    ?>
+</body>
+</html>
+This script takes input temperature in Fahrenheit from the user, converts it to Celsius, and vice versa, then displays both conversions separately on the browser screen.
+Feel free to ask if you have any questions or need further assistance!
+continue
+ChatGPT
+46.	Write a PHP Script to add the following fields in the Student Table with a database connection:
+•	Roll Number
+•	Name
+•	City
+•	Pin Code
+Also, display the result on the browser screen through the "Display Record" button.
+php
+<?php
+$servername = "localhost";
+$username = "username";
+$password = "password";
+$dbname = "dbname";
+
+$conn = new mysql($servername, $username, $password, $dbname);
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+if ($_SERVER["REQUEST_METHOD"] == "GET") {
+    $rollNumber = $_GET["rollNumber"];
+    $name = $_GET["name"];
+    $city = $_GET["city"];
+    $pinCode = $_GET["pinCode"];
+
+    $sql = "INSERT INTO student (rollNumber, name, city, pinCode) VALUES ('$rollNumber', '$name', '$city', '$pinCode')";
+
+    if ($conn->query(sql) === TRUE) {
+        echo "New record created successfully";
+    } else {
+        echo "Error: " . $sql . "<br>" . $conn->error;
+    }
+}
+
+$conn->close();
+?>
+This is the form to capture student details and display the records:
+php
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration</title>
+</head>
+<body>
+    <form method="get" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+        <label for="rollNumber">Roll Number:</label>
+        <input type="text" id="rollNumber" name="rollNumber"><br><br>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name"><br><br>
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city"><br><br>
+        <label for="pinCode">Pin Code:</label>
+        <input type="text" id="pinCode" name="pinCode"><br><br>
+        <input type="submit" value="Register">
+    </form>
+</body>
+</html>
+This script allows users to register students by entering their details and then displays the result on the browser screen.
+Feel free to ask if you have any questions or need further assistance!
+continue
+ChatGPT
+47.	Write a PHP script to add records in the Employee Table with Database connection and display the result of employees having a salary greater than 50000 Rs per month.
+php
+<?php
+$servername = "localhost";
+$username = "username";
+$password = "password";
+$dbname = "dbname";
+
+$conn = new mysql($servername, $username, $password, $dbname);
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+if ($_SERVER["REQUEST_METHOD"] == "GET") {
+    $empNo = $_GET["empNo"];
+    $name = $_GET["name"];
+    $department = $_GET["department"];
+    $salary = $_GET["salary"];
+
+    $sql = "INSERT INTO employee (empNo, name, department, salary) VALUES ('$empNo', '$name', '$department', '$salary')";
+
+    if ($conn->query($sql) === TRUE) {
+        echo "New record created successfully";
+    } else {
+        echo "Error: " . $sql . "<br>" . $conn->error;
+    }
+}
+
+$sql = "SELECT * FROM employee WHERE salary > 50000";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    echo "<table><tr><th>Employee No</th><th>Name</th><th>Department</th><th>Salary</th></tr>";
+    while($row = $result->fetch_assoc()) {
+        echo "<tr><td>".$row["empNo"]."</td><td>".$row["name"]."</td><td>".$row["department"]."</td><td>".$row["salary"]."</td></tr>";
+    }
+    echo "</table>";
+} else {
+    echo "No records found";
+}
+
+$conn->close();
+?>
+This script allows users to add records to the Employee table and displays the result of employees with a salary greater than 50000 Rs per month.
+Feel free to ask if you have any questions or need further assistance!
+continue
+ChatGPT
+48.	Write a PHP script to add records in the Users Table with Database Connection. Include fields for User ID, User Name, and Password. Then, update the user's password using the update option on the browser screen and show the updated result.
+php
+<?php
+$servername = "localhost";
+$username = "username";
+$password = "password";
+$dbname = "dbname";
+
+$conn = new mysql($servername, $username, $password, $dbname);
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// Add record to Users Table
+if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET["addRecord"])) {
+    $userID = $_GET["userID"];
+    $userName =_get["userName"];
+    $password = _GET["password"];
+
+    $sql = "INSERT INTO users (userID, userName, password) VALUES ('$userID', '$userName', '$password')";
+
+    if ($conn->query($sql) === TRUE) {
+        echo "New record created successfully";
+    } else {
+        echo "Error: " . $sql . "<br>" . $conn->error;
+    }
+}
+
+// Update user's password
+if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET["updatePassword"])) {
+    $userID = $_GET["userID"];
+    $newPassword = $_GET["newPassword"];
+
+    $sql = "UPDATE users SET password='$newPassword' WHERE userID='$userID'";
+
+    if ($conn->query($sql) === TRUE) {
+        echo "Password updated successfully";
+    } else {
+        echo "Error updating password: " . $conn->error;
+    }
+}
+
+$conn->close();
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Management</title>
+</head>
+<body>
+    <!-- Add Record Form -->
+    <h2>Add User Record</h2>
+    <form method="get" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+        <label for="userID">User ID:</label>
+        <input type="text" id="userID" name="useriD" required><br><br>
+        <label for="userName">User Name:</label>
+        <input type="text" id="userName" name="userName" required><br><br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br><br>
+        <input type="submit" name="addRecord" value="Add Record">
+    </form>
+
+    <!-- Update Password Form -->
+    <h2>Update Password</h2>
+    <form method="get" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+        <label for="userID">User ID:</label>
+        <input typ="text" id="userID" name="userID" required><br><br>
+        <label for="newPassword">New Password:</label>
+        <input type="password" id="newPassword" name="newPassword" required><br><br>
+        <input type="submit" name="updatePassword" value="Update Password">
+    </form>
+</body>
+</html>
+This script allows users to add records to the Users table and update the user's password using the update option on the browser screen.
+Feel free to ask if you have any questions or need further assistance!
